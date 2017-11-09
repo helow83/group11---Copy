@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="../pepe_icon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="../stylesheet.css" rel="stylesheet" type="text/css">
+		<title>
+			Pepestore Gallery
+		</title>
+	</head>
+		<body>
+		<header>
+			<a href="../index.html"><img class="headImgClass" src="../pepestore_logo.png" alt="Pepestore"></a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+ 				<li><a href="../products.html">Products</a></li>
+ 				<li><a class="active" href="gallery.html">Gallery</a></li>
+  				<li><a href="../about.html">About</a></li>
+			</ul>
+		</nav>
+			<div>
+				<h1>Welcome to the gallery!</h1>
+				<h2>Here we have a collection of pepes of all rarities</h2>
+				<p>Pepes come in all shapes and sizes</p>
+				<p>We are constantly working on collecting rare pepes</p>
+				<h2> Here is our collection of pepes:</h2>
+		<table class="galleryTable">
+			<tr>
+				<th><img src="space_pepe.jpg" alt="Space Pepe"></th>
+				<th><img src="foreveralone_pepe.jpg" alt="Forever Alone Pepe"></th>
+				<th><img src="why_Pepe.PNG" alt="Why Pepe"></th>
+			</tr>
+			<tr>
+				<td><img src="galaxy_pepe.jpg" alt="Galaxy Pepe"></td>
+				<td><img src="tritium_pepe.jpg" alt="Tritium Pepe"></td>
+				<td><img src="puzzle_pepe.jpg" alt="Puzzle Pepe"></td>
+			</tr>
+		</table>
+			</div>
+			<div class="show-on-desktop" style="max-width:300px">
+				<img class="sliderImages" src="space_pepe.jpg" alt="Space Pepe">
+				<img class="sliderImages" src="foreveralone_pepe.jpg" alt="Forever Alone Pepe">
+				<img class="sliderImages" src="why_Pepe.PNG" alt="Why Pepe">
+				<img class="sliderImages" src="galaxy_pepe.jpg" alt="Galaxy Pepe">
+				<img class="sliderImages" src="tritium_pepe.jpg" alt="Tritium Pepe">
+				<img class="sliderImages" src="puzzle_pepe.jpg" alt="Puzzle Pepe">
+			</div>
+		<script type="text/javascript">
+			var gallerySlide = 0;
+			showSlide(); // Runs the slideshow as the page loads
+
+			function showSlide() {
+				var i; // Declares i so it can be used in the for-loop
+				var x = document.getElementsByClassName("sliderImages"); // Makes all the images a variable
+				for (i = 0; i < x.length; i++) { // As long as i is less than the length of x
+					x[i].style.display = "none";  // Browses through the images, and hides the others
+				}
+				gallerySlide++;
+				if ( gallerySlide > x.length) {gallerySlide = 1} // Starts from the first image and browses through
+				x[gallerySlide-1].style.display = "block"; // Shows the current image
+				setTimeout(showSlide, 3000);  // pauses the image slide for 3 seconds
+			}
+		</script>
+			<footer>
+				<i>Pepe the frog is made by Matt Furie. We do not own Pepe the frog.<br>
+				Website made by Dank Design<br>
+				For members info, check the <a href="../about.html">about</a> section </i>
+			</footer>
+		</body>
+</html>

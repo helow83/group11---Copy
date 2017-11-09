@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="pepe_icon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+		<title>
+			About Pepestore
+		</title>
+	</head>
+		<body>
+		<header>
+			<a href="index.html"><img class="headImgClass" src="pepestore_logo.png" alt="Pepestore"></a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+ 				<li><a href="products.html">Products</a></li>
+ 				<li><a href="gallery/gallery.html">Gallery</a></li>
+  				<li><a class="active" href="about.html">About</a></li>
+			</ul>
+		</nav>
+			<div>
+				<h1>Pepestore is run by Dank Design!</h1>
+				<h2>Here we will talk about ourselves</h2>
+				<p><a>About Dank Design:</a></p>
+				<p>Dank Design likes the dankest memes</p>
+				<p>Dank Design works towards collecting and selling the dankest memes</p>
+				<h2> Here are the Dank Design team:</h2>
+					<ul>
+						<li>Vetle Skifjeld</li>
+						<li><a href="mailto:vetle.skifjeld@hotmail.com" target="_top">vetle.skifjeld@hotmail.com</a></li>
+					</ul>
+					<ul>
+						<li>Thor Adrian Malmgren</li>
+						<li><a href="mailto:thor-dragon@hotmail.com" target="_top">thor-dragon@hotmail.com</a></li>
+					</ul>
+				<table>
+					<tr>
+						<th>Vetle Skifjeld</th>
+						<th>Thor Adrian Malmgren</th>
+					</tr>
+					<tr>
+						<td><img class="imgClass" src="vetle_skifjeld.jpg" alt="Vetle Skifjeld"></td>
+						<td><img class="imgClass" src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/14021704_1167405946615674_1536921841205872205_n.jpg?oh=2714aad4c3b0d882c398e772dadddc52&oe=5A531061" alt="Thor Adrian Malmgren"></td>
+					</tr>
+				</table>
+				<h2>More dank memes and Pepe the frog:</h2>
+					<ul>
+						<li> <a href="http://knowyourmeme.com/memes/pepe-the-frog">Knowyourmeme Pepe the frog</a></li>
+						<li> <a href="https://www.reddit.com/r/dankmemes/"> Reddit - Dank memes</a></li>
+						<li> <a href="https://www.reddit.com/r/memeeconomy/"> Reddit - Meme economy</a></li>
+					</ul>
+			</div>
+
+			<p id="clickHere">Click the button to view your position</p>
+			<button onclick="youAreHere()">Click Here!</button>
+			<div id="hereYouAre">You are here!</div>
+
+			<script>
+
+				var here = document.getElementById("clickHere"); // Declares variable here, which will edit
+																// The text inside the paragraph with the Id
+																// clickHere
+
+				function youAreHere() {						// Checks if geolocation works
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(showPosition);
+					} else{
+						here.innerHTML = "Your browser does not support geolocation."; // Displays an error in the paragraph
+																					   // With Id clickHere
+					}
+				}
+				function showPosition(position) {
+					var latlon = position.coords.latitude + "," + position.coords.longitude; // This gets your latitude and longitude, and makes them a String with a "," to separate them accurately for the web link.
+					var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=15&size=350x350&key=AIzaSyCmDeRZ4yf_GahA5GAjHs9KGQbKbCRttqw";
+						document.getElementById("hereYouAre").innerHTML= "<img src='"+img_url+"'>";
+						// This gets your position, pastes the position in the web link to google maps
+						// And will display it on the webpage as a static map, meaning you cannot move it
+				}
+			</script>
+			<footer>
+				<i>Pepe the frog is made by Matt Furie. We do not own Pepe the frog.<br>
+				Website made by Dank Design<br>
+				For members info, check the <a href="about.html">about</a> section </i>
+			</footer>
+		</body>
+</html>
